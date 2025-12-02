@@ -34,7 +34,7 @@ export default function HeroSection({ language, onToggleLanguage }: Props) {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-[90vh] sm:h-screen w-full overflow-hidden flex items-center justify-center px-4">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -49,7 +49,7 @@ export default function HeroSection({ language, onToggleLanguage }: Props) {
       <button
         aria-label="Toggle language"
         onClick={onToggleLanguage}
-        className="absolute right-6 top-6 z-30 flex items-center gap-3 rounded-full border border-white/50 bg-black/40 px-4 py-2 text-white backdrop-blur hover:bg-black/60 transition"
+        className="absolute right-4 sm:right-6 top-4 sm:top-6 z-30 flex items-center gap-3 rounded-full border border-white/50 bg-black/40 px-3 sm:px-4 py-2 text-white backdrop-blur hover:bg-black/60 transition"
       >
         <span className="flex flex-col gap-1">
           <span className="block h-[2px] w-6 bg-white"></span>
@@ -61,14 +61,14 @@ export default function HeroSection({ language, onToggleLanguage }: Props) {
         </span>
       </button>
 
-      <div className="absolute left-6 top-6 z-30 drop-shadow-lg rounded-lg border border-black/60 bg-black/20 px-2 py-2">
+      <div className="absolute left-4 sm:left-6 top-4 sm:top-6 z-30 drop-shadow-lg rounded-lg border border-black/60 bg-black/20 px-2 py-2">
         <Image
           src="/main-logo.png"
           alt="Gira-Sol Miami Boutique logo"
           width={140}
           height={140}
           priority
-          className="h-auto w-32 md:w-36 rounded-md"
+          className="h-auto w-24 sm:w-32 md:w-36 rounded-md"
         />
       </div>
       
