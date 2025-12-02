@@ -10,16 +10,16 @@ const copy = {
     contact: "Contact",
     social: "Social",
     hours: "Hours",
-    monSat: "Mon - Sat: 10am - 8pm",
-    sun: "Sun: 12pm - 6pm",
+    monSat: "Mon - Sat: 11:00 AM - 7:00 PM",
+    sun: "",
     tagline: "Elegance in every detail",
   },
   es: {
     contact: "Contacto",
     social: "Redes",
     hours: "Horarios",
-    monSat: "Lun - Sáb: 10am - 8pm",
-    sun: "Dom: 12pm - 6pm",
+    monSat: "Lunes a sábado de 11:00 am a 7:00 pm",
+    sun: "",
     tagline: "Elegancia en cada detalle",
   },
 };
@@ -60,7 +60,7 @@ export default function Footer({ language }: Props) {
               <div>
                 <h3 className="text-white uppercase mb-4 tracking-widest">{copy[language].hours}</h3>
                 <p className="mb-2">{copy[language].monSat}</p>
-                <p>{copy[language].sun}</p>
+                {copy[language].sun && <p>{copy[language].sun}</p>}
               </div>
             </div>
           </div>
