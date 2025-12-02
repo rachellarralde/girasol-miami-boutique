@@ -78,19 +78,6 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
           />
         </div>
 
-        {/* Navigation Links - centered */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#inicio" className="text-gray-900 font-medium hover:text-amber-700 transition">
-            {copy[language].inicio}
-          </a>
-          <a href="#productos" className="text-gray-900 font-medium hover:text-amber-700 transition">
-            {copy[language].productos}
-          </a>
-          <a href="#contacto" className="text-gray-900 font-medium hover:text-amber-700 transition">
-            {copy[language].contacto}
-          </a>
-        </div>
-
         {/* Social + Language */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3 text-gray-900">
