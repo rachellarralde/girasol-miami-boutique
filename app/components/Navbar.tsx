@@ -66,16 +66,19 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
   return (
     <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
-        {/* Logo */}
-        <div className="flex-shrink-0">
+        {/* Logo + Name */}
+        <div className="flex items-center gap-3 sm:gap-4">
           <Image
-            src="/main-logo.png"
+            src="/main-logo1.jpg"
             alt="Gira-Sol Miami Boutique logo"
-            width={120}
-            height={120}
+            width={140}
+            height={100}
             priority
-            className="h-auto w-24 sm:w-28 md:w-32"
+            className="h-auto w-24 sm:w-32 md:w-36"
           />
+          <span className="hidden sm:inline-block text-lg md:text-xl font-semibold text-gray-900 tracking-wide">
+            Girasol Miami Boutique
+          </span>
         </div>
 
         {/* Social + Language */}
