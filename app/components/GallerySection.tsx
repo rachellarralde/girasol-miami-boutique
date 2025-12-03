@@ -47,30 +47,24 @@ export default function GallerySection({ language }: Props) {
           {copy[language].heading}
         </h2>
 
-        <div className="overflow-x-auto">
-          <div className="flex gap-6 md:gap-8 justify-center md:justify-start snap-x snap-mandatory px-1">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="snap-center shrink-0 w-56 sm:w-64 md:w-72 lg:w-80 group relative cursor-pointer"
-              >
-                <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                  <Image
-                    src={product.src}
-                    alt={product.alt}
-                    fill
-                    sizes="200px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500" />
-                </div>
-                <div className="mt-3">
-                  <h3 className="text-lg font-serif text-gray-900">{product.name[language]}</h3>
-                  <p className="text-xs text-gray-600 mt-1 uppercase tracking-wider">{copy[language].cta}</p>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="group relative w-full"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                <Image
+                  src={product.src}
+                  alt={product.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
