@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { useState } from 'react';
 import type { Language } from "../page";
 
 type Props = {
@@ -72,6 +73,8 @@ const socialLinks = [
 ];
 
 export default function Navbar({ language, onToggleLanguage }: Props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
@@ -85,13 +88,13 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
             priority
             className="h-auto w-24 sm:w-32 md:w-36"
           />
-          <span className="hidden sm:inline-block text-lg md:text-xl font-semibold text-gray-900 tracking-wide">
+          <span className="inline-block text-base sm:text-lg md:text-xl font-semibold text-gray-900 tracking-wide">
             Girasol Miami Boutique
           </span>
         </div>
 
-        {/* Social + Language */}
-        <div className="flex items-center gap-4">
+        {/* Desktop Social + Language */}
+        <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-3 text-gray-900">
             {socialLinks.map((item) => (
               <a
@@ -109,11 +112,58 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
           <button
             onClick={onToggleLanguage}
             className="text-gray-900 font-semibold text-sm hover:text-amber-700 transition"
-          >
-            {copy[language].toggleLabel}
-          </button>
+            >
+              {copy[language].toggleLabel}
+            </button>
+          </div>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-900"
+          aria-label="Open menu"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span className="flex flex-col gap-[5px]">
+            <span className="block h-[2px] w-5 bg-current"></span>
+            <span className="block h-[2px] w-5 bg-current"></span>
+            <span className="block h-[2px] w-5 bg-current"></span>
+          </span>
         </div>
-      </div>
+
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="md:hidden absolute right-4 top-full mt-2 w-48 rounded-xl border border-gray-200 bg-white shadow-lg p-4 space-y-4">
+          <div className="flex items-center justify-between text-gray-900">
+            <span className="text-sm font-semibold">Idioma</span>
+            <button
+              onClick={() => {
+                onToggleLanguage();
+                setMenuOpen(false);
+              }}
+              className="text-gray-900 font-semibold text-sm hover:text-amber-700 transition"
+            >
+              {copy[language].toggleLabel}
+            </button>
+          </div>
+          <div className="flex items-center justify-between text-gray-900">
+            <span className="text-sm font-semibold">Redes</span>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  aria-label={item.label}
+                  className="hover:text-amber-700 transition"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
