@@ -10,27 +10,27 @@ type Props = {
 const products = [
   {
     id: 1,
-    src: '/assets/product-1.png',
-    alt: 'Floral Silk Dress',
-    name: { en: 'Floral Silk Dress', es: 'Vestido de Seda Floral' },
+    src: '/woman1.png',
+    alt: 'Red knit top with metallic pants',
+    name: { en: 'Red Holiday Look', es: 'Look Rojo Festivo' },
   },
   {
     id: 2,
-    src: '/assets/product-2.png',
-    alt: 'Beige Trench Coat',
-    name: { en: 'Beige Trench Coat', es: 'Gabardina Beige' },
+    src: '/woman2.png',
+    alt: 'Leopard sweater with dark trousers',
+    name: { en: 'Leopard Chic', es: 'Chic Leopardo' },
   },
   {
     id: 3,
-    src: '/assets/product-3.png',
-    alt: 'Leather Handbag',
-    name: { en: 'Leather Handbag', es: 'Bolso de Cuero' },
+    src: '/woman3.png',
+    alt: 'Graphic sweater with brown pants',
+    name: { en: 'Artisanal Knit', es: 'Suéter Artesanal' },
   },
   {
     id: 4,
-    src: '/assets/product-4.png',
-    alt: 'Gold Frame Sunglasses',
-    name: { en: 'Gold Frame Sunglasses', es: 'Gafas con Marco Dorado' },
+    src: '/woman4.png',
+    alt: 'Green sweater with brown pants',
+    name: { en: 'Emerald Stroll', es: 'Paseo Esmeralda' },
   },
 ];
 
@@ -54,6 +54,7 @@ export default function GallerySection({ language }: Props) {
                 src={product.src}
                 alt={product.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
