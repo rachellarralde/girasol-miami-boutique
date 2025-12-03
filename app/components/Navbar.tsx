@@ -77,7 +77,7 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
 
   return (
     <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Logo + Name */}
         <div className="flex items-center gap-3 sm:gap-4">
           <Image
@@ -129,6 +129,8 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
             <span className="block h-[2px] w-5 bg-current"></span>
           </span>
         </button>
+
+      </div>
 
       {/* Mobile dropdown */}
       {menuOpen && (
