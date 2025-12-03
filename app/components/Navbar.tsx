@@ -112,10 +112,10 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
           <button
             onClick={onToggleLanguage}
             className="text-gray-900 font-semibold text-sm hover:text-amber-700 transition"
-            >
-              {copy[language].toggleLabel}
-            </button>
-          </div>
+          >
+            {copy[language].toggleLabel}
+          </button>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -128,7 +128,7 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
             <span className="block h-[2px] w-5 bg-current"></span>
             <span className="block h-[2px] w-5 bg-current"></span>
           </span>
-        </div>
+        </button>
 
       {/* Mobile dropdown */}
       {menuOpen && (
