@@ -41,29 +41,36 @@ const copy = {
 
 export default function GallerySection({ language }: Props) {
   return (
-    <section className="py-20 px-4 md:px-10 bg-white">
+    <section className="py-14 px-4 md:px-10 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl text-center mb-16 uppercase tracking-widest text-gray-900">
+        <h2 className="text-3xl md:text-4xl text-center mb-10 uppercase tracking-widest text-gray-900">
           {copy[language].heading}
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {products.map((product) => (
-            <div key={product.id} className="group relative aspect-[3/4] overflow-hidden cursor-pointer">
-              <Image
-                src={product.src}
-                alt={product.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
-              <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/90 backdrop-blur-sm">
-                <h3 className="text-xl font-serif text-gray-900">{product.name[language]}</h3>
-                <p className="text-sm text-gray-600 mt-1 uppercase tracking-wider">{copy[language].cta}</p>
+
+        <div className="overflow-x-auto">
+          <div className="flex gap-6 md:gap-8 justify-center md:justify-start snap-x snap-mandatory px-1">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="snap-center shrink-0 w-56 sm:w-64 md:w-72 lg:w-80 group relative cursor-pointer"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                  <Image
+                    src={product.src}
+                    alt={product.alt}
+                    fill
+                    sizes="200px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500" />
+                </div>
+                <div className="mt-3">
+                  <h3 className="text-lg font-serif text-gray-900">{product.name[language]}</h3>
+                  <p className="text-xs text-gray-600 mt-1 uppercase tracking-wider">{copy[language].cta}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
