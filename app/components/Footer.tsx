@@ -51,6 +51,7 @@ export default function Footer({ language }: Props) {
               <div>
                 <h3 className="text-white uppercase mb-4 tracking-widest">{copy[language].social}</h3>
                 <div className="flex flex-col space-y-2">
+                  <a href="https://wa.me/17862858435" className="hover:text-white transition-colors" target="_blank" rel="noreferrer">WhatsApp</a>
                   <a href="#" className="hover:text-white transition-colors">Instagram</a>
                   <a href="#" className="hover:text-white transition-colors">TikTok</a>
                   <a href="#" className="hover:text-white transition-colors">Facebook</a>

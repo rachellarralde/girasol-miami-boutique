@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import GallerySection from "./components/GallerySection";
 import Footer from "./components/Footer";
@@ -16,7 +17,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <HeroSection language={language} onToggleLanguage={toggleLanguage} />
+      <Navbar language={language} onToggleLanguage={toggleLanguage} />
+      <HeroSection language={language} />
       <GallerySection language={language} />
       <Footer language={language} />
     </main>
