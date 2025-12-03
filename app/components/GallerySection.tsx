@@ -35,8 +35,8 @@ const products = [
 ];
 
 const copy = {
-  en: { heading: "Curated Collection", cta: "View Details" },
-  es: { heading: "Colección Curada", cta: "Ver Detalles" },
+  en: { heading: "Collection", cta: "View Details" },
+  es: { heading: "Colección", cta: "Ver Detalles" },
 };
 
 export default function GallerySection({ language }: Props) {
