@@ -147,19 +147,20 @@ export default function Navbar({ language, onToggleLanguage }: Props) {
               {copy[language].toggleLabel}
             </button>
           </div>
-          <div className="flex items-center justify-between text-gray-900">
-            <span className="text-sm font-semibold">Redes</span>
-            <div className="flex items-center gap-3">
+          <div className="text-gray-900 space-y-2">
+            <span className="text-sm font-semibold block">Redes</span>
+            <div className="flex flex-col gap-2">
               {socialLinks.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="hover:text-amber-700 transition"
+                  className="hover:text-amber-700 transition inline-flex items-center gap-2"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {item.icon}
+                  <span className="h-5 w-5">{item.icon}</span>
+                  <span className="text-sm">{item.label}</span>
                 </a>
               ))}
             </div>
